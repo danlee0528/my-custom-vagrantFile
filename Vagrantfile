@@ -15,10 +15,21 @@ Vagrant.configure("2") do |config|
      apt-get update
      apt-get install -y git vim
      apt-get install -y golang-go haskell-platform mit-scheme swi-prolog
+    
      # install python 2.7
      sudo add-apt-repository ppa:deadsnakes/ppa
      sudo apt-get update
      sudo apt-get install python2.7
+
+     # install Remote VS code 
+     sudo wget -O /usr/local/bin/rmate https://raw.github.com/aurora/rmate/master/rmate
+     sudo chmod a+x /usr/local/bin/rmate
+     ssh -R 52698:localhost:52698 127.0.0.1
+    
+     # install python-pip
+     sudo apt-get install python-pip
+
+
   SHELL
 
   config.vm.box_check_update = true
